@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars Experience</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <!-- <script src="./js/mars_app.js"></script>  removed temporarily --> 
+</head>
+<body>
+    <a-scene>
+        <a-entity gltf-model="./models/space_neb1.glb" scale="10 10 10" position="0 0 -5"></a-entity>
+        <!-- <a-sky src="./images/space.jpg"></a-sky> -->
+
+        <a-entity gltf-model="./models/iss.glb" scale="0.1 0.1 0.1" position="0 0 0" rotation="0 0 0"></a-entity>
+
+        
+
+        <a-camera position="0 0 0"></a-camera>
+    </a-scene>
+    
+</body>
+</html>
