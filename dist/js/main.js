@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import '../style.css'
+// import '.../style.css'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import * as tf from '@tensorflow/tfjs';
@@ -17,7 +17,7 @@ let isEarthHovered = false;
 let isMarsHovered = false;
 let isMoonHovered = false;
 
-loader.load('./models/sci-fi_spaceship_bridge.glb', function (gltf) {
+loader.load('./public/models/sci-fi_spaceship_bridge.glb', function (gltf) {
     scene.add(gltf.scene);
 }, undefined, function (error) {
     console.error(error);
