@@ -23,8 +23,8 @@ loader.load('./public/models/sci-fi_spaceship_bridge.glb', function (gltf) {
     console.error(error);
 });
 
-const earthDayTexture = new THREE.TextureLoader().load('../images/earth_day_texture.jpg');
-const earthNightTexture = new THREE.TextureLoader().load('../images/earth_night_texture.jpg');
+const earthDayTexture = new THREE.TextureLoader().load('./public/images/earth_day_texture.jpg');
+const earthNightTexture = new THREE.TextureLoader().load('./public/images/earth_night_texture.jpg');
 const earthRadius = 0.8;
 const earthSegments = 32;
 const earthGeometry = new THREE.SphereGeometry(earthRadius, earthSegments, earthSegments);
@@ -34,7 +34,7 @@ earthSphere.position.x = 0;
 earthSphere.position.y = 1;
 scene.add(earthSphere);
 
-const marsTexture = new THREE.TextureLoader().load('../images/mars_texture.jpg');
+const marsTexture = new THREE.TextureLoader().load('./public/images/mars_texture.jpg');
 const marsRadius = 0.5;
 const marsSegments = 32;
 const marsGeometry = new THREE.SphereGeometry(marsRadius, marsSegments, marsSegments);
@@ -43,7 +43,7 @@ marsSphere = new THREE.Mesh(marsGeometry, marsMaterial);
 marsSphere.position.x = -3;
 scene.add(marsSphere);
 
-const moonTexture = new THREE.TextureLoader().load('../images/moon_texture.jpg');
+const moonTexture = new THREE.TextureLoader().load('./public/images/moon_texture.jpg');
 const moonRadius = 0.5;
 const moonSegments = 32;
 const moonGeometry = new THREE.SphereGeometry(moonRadius, moonSegments, moonSegments);
@@ -84,11 +84,11 @@ document.addEventListener('mousemove', function (event) {
 let motionlock=0;
 document.addEventListener('click', function (event) {
     if (isEarthHovered&&!motionlock) {
-        window.open('earth_experience.html', '_blank');
+        window.open('./public/earth_experience.html', '_blank');
     } else if (isMarsHovered&&!motionlock) {
-        window.open('mars_experience.html', '_blank');
+        window.open('./public/mars_experience.html', '_blank');
     } else if (isMoonHovered&&!motionlock) {
-        window.open('moon_experience.html', '_blank');
+        window.open('./public/moon_experience.html', '_blank');
     }
 });
 
@@ -242,11 +242,11 @@ async function setupCamera() {
                 console.log('Fist detected - Proceeding');
 
                 if (selectedPlanet === 'earth') {
-                    window.open('earth_experience.html', '_blank');
+                    window.open('./public/earth_experience.html', '_blank');
                 } else if (selectedPlanet === 'moon') {
-                    window.open('moon_experience.html', '_blank');
+                    window.open('./public/moon_experience.html', '_blank');
                 } else if (selectedPlanet === 'mars') {
-                    window.open('mars_experience.html', '_blank');
+                    window.open('./public/mars_experience.html', '_blank');
                 }
 
                 lastTabOpenTime = currentTime;
