@@ -17,7 +17,7 @@ let isEarthHovered = false;
 let isMarsHovered = false;
 let isMoonHovered = false;
 
-loader.load('./models/sci-fi_spaceship_bridge.glb', function (gltf) {
+loader.load('./public/models/sci-fi_spaceship_bridge.glb', function (gltf) {
     scene.add(gltf.scene);
 }, undefined, function (error) {
     console.error(error);
