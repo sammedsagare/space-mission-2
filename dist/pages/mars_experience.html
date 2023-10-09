@@ -15,32 +15,37 @@
         
         <a-entity gltf-model="/models/perseverance_rover.glb" scale="0.5 0.5 0.5" position="5 -1 -5"
     id="rover" class="interactive" raycaster="objects: .interactive"></a-entity>
-    
-
 
         <a-camera position="0 1.6 0"></a-camera>
     </a-scene>
+
+    <!-- Hidden audio element with autoplay -->
+    <audio autoplay style="display:none">
+        <source src="/audio/mars.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <script>
-        let currentTime=5001;
-        let previousTime=0;
-       document.addEventListener('DOMContentLoaded', function () {
-    // Wait for the DOM content to be fully loaded before accessing the elements
+        let currentTime = 5001;
+        let previousTime = 0;
 
-    // Get the rover entity
-    var roverEntity = document.getElementById('rover');
+        document.addEventListener('DOMContentLoaded', function () {
+            // Wait for the DOM content to be fully loaded before accessing the elements
 
-    // Add a click event listener to the rover entity using the raycaster-intersected event
-    roverEntity.addEventListener('mousedown', function (event) {
-        console.log("Rover clicked.");
-        // Open a new page when the rover is clicked
-        currentTime=new Date();
-        if(currentTime-previousTime>3000){
-        window.open('https://mars.nasa.gov/', '_blank');
-        previousTime=currentTime; // Replace with the URL you want to open
-    }});
-});
+            // Get the rover entity
+            var roverEntity = document.getElementById('rover');
 
+            // Add a click event listener to the rover entity using the raycaster-intersected event
+            roverEntity.addEventListener('mousedown', function (event) {
+                console.log("Rover clicked.");
+                // Open a new page when the rover is clicked
+                currentTime = new Date();
+                if (currentTime - previousTime > 3000) {
+                    window.open('https://mars.nasa.gov/', '_blank');
+                    previousTime = currentTime; // Replace with the URL you want to open
+                }
+            });
+        });
     </script>
-    
 </body>
 </html>
