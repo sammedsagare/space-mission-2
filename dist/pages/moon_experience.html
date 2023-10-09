@@ -12,11 +12,11 @@
         <a-entity cursor="rayOrigin:mouse"></a-entity>
         <a-light type="directional" position="-10 10 4" target="#moonsurface" intensity="2"></a-light>
 
-        <a-entity id="moonsurface" gltf-model="/public/models/moonsurface.glb" scale="0.01 0.01 0.01" position="0 0 0" rotation="0 90 0"></a-entity>
+        <a-entity id="moonsurface" gltf-model="/models/moonsurface.glb" scale="0.01 0.01 0.01" position="0 0 0" rotation="0 90 0"></a-entity>
 
-        <a-entity gltf-model="/public/models/apollo_11.glb" scale="0.01 0.01 0.01" position="3 0.7 -5"
+        <a-entity gltf-model="/models/apollo_11.glb" scale="0.01 0.01 0.01" position="3 0.7 -5"
             id="rover1" class="interactive"></a-entity>
-            <a-entity gltf-model="/public/models/moon_rover.glb" scale="0.2 0.2 0.2" position="-5 0.6 -5" rotation="0 90 0"
+            <a-entity gltf-model="/models/moon_rover.glb" scale="0.2 0.2 0.2" position="-5 0.6 -5" rotation="0 90 0"
             id="rover2" class="interactive" raycaster="objects: .interactive"></a-entity>
         
         <a-camera position="0 1.6 0">
