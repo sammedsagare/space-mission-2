@@ -1,0 +1,15 @@
+body,html{
+  margin:0;
+  overflow: hidden;
+}
+
+.canvas-container {
+  position: relative;
+}
+
+#canvas1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}

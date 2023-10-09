@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^4.4.5"
+    "vite": "^4.4.11"
   },
   "dependencies": {
     "@tensorflow-models/handpose": "^0.1.0",
