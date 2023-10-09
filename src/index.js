@@ -84,7 +84,7 @@ document.addEventListener('mousemove', function (event) {
 let motionlock=0;
 document.addEventListener('click', function (event) {
     if (isEarthHovered&&!motionlock) {
-        window.open('/pages/earth_experience.html', '_blank');
+        window.open('/pages/iss_experience.html', '_blank');
     } else if (isMarsHovered&&!motionlock) {
         window.open('/pages/mars_experience.html', '_blank');
     } else if (isMoonHovered&&!motionlock) {
@@ -242,7 +242,7 @@ async function setupCamera() {
                 console.log('Fist detected - Proceeding');
 
                 if (selectedPlanet === 'earth') {
-                    window.open('/pages/earth_experience.html', '_blank');
+                    window.open('/pages/iss_experience.html', '_blank');
                 } else if (selectedPlanet === 'moon') {
                     window.open('/pages/moon_experience.html', '_blank');
                 } else if (selectedPlanet === 'mars') {
