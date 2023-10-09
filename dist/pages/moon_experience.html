@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon Experience</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+</head>
+<body>
+    <a-scene>
+        <a-entity cursor="rayOrigin:mouse"></a-entity>
+        <a-light type="directional" position="-10 10 4" target="#moonsurface" intensity="2"></a-light>
+
+        <a-entity id="moonsurface" gltf-model="/public/models/moonsurface.glb" scale="0.01 0.01 0.01" position="0 0 0" rotation="0 90 0"></a-entity>
+
+        <a-entity gltf-model="/public/models/apollo_11.glb" scale="0.01 0.01 0.01" position="3 0.7 -5"
+            id="rover1" class="interactive"></a-entity>
+            <a-entity gltf-model="/public/models/moon_rover.glb" scale="0.2 0.2 0.2" position="-5 0.6 -5" rotation="0 90 0"
+            id="rover2" class="interactive" raycaster="objects: .interactive"></a-entity>
+        
+        <a-camera position="0 1.6 0">
+        </a-camera>
+    </a-scene>
+    <script>
+        let currentTime=5001;
+        let previousTime=0;
+       document.addEventListener('DOMContentLoaded', function () {
+    // Wait for the DOM content to be fully loaded before accessing the elements
+
+    // Get the rover entity
+    var roverEntity = document.getElementById('rover2');
+
+    // Add a click event listener to the rover entity using the raycaster-intersected event
+    roverEntity.addEventListener('mousedown', function (event) {
+        console.log("Rover clicked.");
+        // Open a new page when the rover is clicked
+        currentTime=new Date();
+        if(currentTime-previousTime>3000){
+        window.open('https://krisha-cmd.itch.io/space-odessey', '_blank');
+        previousTime=currentTime; // Replace with the URL you want to open
+    }});
+});
+
+    </script>
+    <!-- <script src="./js/moon_app.js"></script> removed temporarily-->
+</body>
+</html>
+
+
