@@ -3,26 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mars Experience</title>
+    <title>ISS Experience</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
-    <!-- <script src="./js/mars_app.js"></script>  removed temporarily --> 
 </head>
 <body>
     <a-scene>
+        <a-entity cursor="rayOrigin:mouse"></a-entity>
         <a-entity gltf-model="/models/space_neb1.glb" scale="10 10 10" position="0 0 -5"></a-entity>
-        <!-- <a-sky src="./images/space.jpg"></a-sky> -->
 
-        <a-entity gltf-model="/models/iss.glb" scale="0.1 0.1 0.1" position="0 0 0" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="/models/iss.glb" scale="0.1 0.1 0.1" position="0 0 0" rotation="0 0 0" id="iss_model" class="interactive" raycaster="objects: .interactive"></a-entity>
+
 
         
 
         <a-camera position="0 0 0"></a-camera>
     </a-scene>
     <audio autoplay style="display:none">
-        <source src="/audio/homepage.mp3" type="audio/mpeg">
+        <source src="/audio/ISS.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
+      <script>
+        let currentTime = 5001;
+        let previousTime = 0;
+        document.addEventListener('DOMContentLoaded', function(){
+            var issEntity = document.getElementById('iss_model')
+
+            issEntity.addEventListener('mousedown', function(){
+                console.log("ISS Clicked")
+                currentTime = new Date();
+                if (currentTime - previousTime > 3000) {
+                    window.open('https://spotthestation.nasa.gov/tracking_map.cfm', '_blank')
+                    previousTime = currentTime
+                    
+                }
+
+            })
+        })
+      </script>
     
 </body>
 </html>

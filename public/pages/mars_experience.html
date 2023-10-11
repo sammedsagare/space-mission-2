@@ -6,7 +6,6 @@
     <title>Mars Experience</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
-    <!-- <script src="./js/mars_app.js"></script>  removed temporarily --> 
 </head>
 <body>
     <a-scene>
@@ -18,8 +17,6 @@
 
         <a-camera position="0 1.6 0"></a-camera>
     </a-scene>
-
-    <!-- Hidden audio element with autoplay -->
     <audio autoplay style="display:none">
         <source src="/audio/mars.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
@@ -30,19 +27,14 @@
         let previousTime = 0;
 
         document.addEventListener('DOMContentLoaded', function () {
-            // Wait for the DOM content to be fully loaded before accessing the elements
 
-            // Get the rover entity
             var roverEntity = document.getElementById('rover');
-
-            // Add a click event listener to the rover entity using the raycaster-intersected event
             roverEntity.addEventListener('mousedown', function (event) {
                 console.log("Rover clicked.");
-                // Open a new page when the rover is clicked
                 currentTime = new Date();
                 if (currentTime - previousTime > 3000) {
                     window.open('https://mars.nasa.gov/', '_blank');
-                    previousTime = currentTime; // Replace with the URL you want to open
+                    previousTime = currentTime;
                 }
             });
         });

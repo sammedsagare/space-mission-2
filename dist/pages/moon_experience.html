@@ -23,7 +23,6 @@
         </a-camera>
     </a-scene>
 
-    <!-- Hidden audio element with autoplay -->
     <audio autoplay style="display:none">
         <source src="/audio/moon.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
@@ -32,24 +31,18 @@
         let currentTime=5001;
         let previousTime=0;
        document.addEventListener('DOMContentLoaded', function () {
-    // Wait for the DOM content to be fully loaded before accessing the elements
-
-    // Get the rover entity
     var roverEntity = document.getElementById('rover2');
 
-    // Add a click event listener to the rover entity using the raycaster-intersected event
     roverEntity.addEventListener('mousedown', function (event) {
         console.log("Rover clicked.");
-        // Open a new page when the rover is clicked
         currentTime=new Date();
         if(currentTime-previousTime>3000){
         window.open('https://krisha-cmd.itch.io/space-odessey', '_blank');
-        previousTime=currentTime; // Replace with the URL you want to open
+        previousTime=currentTime; 
     }});
 });
 
     </script>
-    <!-- <script src="./js/moon_app.js"></script> removed temporarily-->
 </body>
 </html>
 
